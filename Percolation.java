@@ -1,5 +1,4 @@
 import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
     private int N;
@@ -10,14 +9,14 @@ public class Percolation {
     private int virtualTop;
     private int virtualBottom;
 
-    private WeightedQuickUnionUF UnionFind;
+    private QuickUnionUF UnionFind;
 
     public Percolation(int n) {
         if (n <= 0)
             throw new IllegalArgumentException();
 
         N = n;
-        UnionFind = new WeightedQuickUnionUF((N * N) + 2);
+        UnionFind = new QuickUnionUF((N * N) + 2);
         sitesMatrix = new boolean[N + 1][N + 1];
         oneDSitesCoord = new int[N + 1][N + 1];
 
